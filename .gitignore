@@ -29,3 +29,6 @@ LectureNotePacketSciCompMeth.pdf
 #####################
 *.mp4
 
+# Vagrant related #
+###################
+.vagrant/
