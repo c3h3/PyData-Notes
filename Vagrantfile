@@ -12,16 +12,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+
+  config.ssh.forward_agent = true
+  config.ssh.forward_x11 = true
+
   config.vm.provision :shell, id: 'python-env', :path => "vagrant_scripts/python_env.sh"
   config.vm.provision :shell, id: 'python-packages', :path => "vagrant_scripts/python_pkgs.sh"
   config.vm.provision :shell, id: 'r-env', :path => "vagrant_scripts/r_env.sh"
   config.vm.provision :shell, id: 'greeting', :path => "vagrant_scripts/provision.py"
 
   # Development only
-  config.vm.provider "virtualbox" do |v|
-    v.name = "PLaY Data VM"
-    v.memory = 8192
-    v.cpus = 4
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "PLaY Data VM"
+    vb.memory = 8192
+    vb.cpus = 4
+    vb.gui = true
+
+    # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    # vb.customize ["modifyvm", :id, "--vram", "128"]
+    # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
   end
 
   # Disable automatic box update checking. If you disable this, then
@@ -43,30 +54,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # your network.
   # config.vm.network "public_network"
 
-  # If true, then any SSH connections made will enable agent forwarding.
-  # Default value: false
-  # config.ssh.forward_agent = true
-
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Don't boot with headless mode
-  #   vb.gui = true
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
-  #
-  # View the documentation for the provider you're using for more
-  # information on available options.
 
   # Enable provisioning with CFEngine. CFEngine Community packages are
   # automatically installed. For example, configure the host as a
