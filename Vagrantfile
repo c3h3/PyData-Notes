@@ -20,19 +20,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, id: 'python-packages', :path => "vagrant_scripts/python_pkgs.sh"
   config.vm.provision :shell, id: 'r-env', :path => "vagrant_scripts/r_env.sh"
   config.vm.provision :shell, id: 'greeting', :path => "vagrant_scripts/provision.py"
+  config.vm.provision :shell, id: 'python-orange', :path => "vagrant_scripts/python_orange.sh"
 
   # Development only
   config.vm.provider "virtualbox" do |vb|
     vb.name = "PLaY Data VM"
     vb.memory = 8192
     vb.cpus = 4
-    vb.gui = true
+
+    if ENV['VAGRANT_NO_GUI'] && ENV['VAGRANT_NO_GUI'] == '1'
+      vb.gui = false
+    else
+      vb.gui = true
+    end
+
+    # an error in turning on 3D accelerating
+    # which fails user to arbitarily set vb.gui = true or false
+    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
 
     # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-    # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
     # vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # vb.customize ["modifyvm", :id, "--vram", "128"]
     # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+
   end
 
   # Disable automatic box update checking. If you disable this, then
