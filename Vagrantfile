@@ -10,8 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ask/ubuntu-13.10-desktop-64bit"  # "trusty64-gnome"
-  #config.vm.box_url = "~/trusty64-gnome.box"
+  config.vm.box = "trusty64-gnome"  # "ask/ubuntu-13.10-desktop-64bit"
+  config.vm.box_url = "~/trusty64-gnome.box"
 
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
