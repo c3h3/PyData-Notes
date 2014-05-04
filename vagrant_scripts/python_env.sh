@@ -1,4 +1,4 @@
-apt-get install -y python-dev python3-dev python-pip python3-pip python-virtualenv
+apt-get install -y python-dev python-pip python-virtualenv
 
 # Numpy, Scipy
 # apt-get install -y python-numpy python-scipy

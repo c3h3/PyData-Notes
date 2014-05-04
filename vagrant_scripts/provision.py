@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf8
 import logging
 from getpass import getuser
 import subprocess as sp
