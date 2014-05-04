@@ -10,8 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "trusty64-gnome"
+  config.vm.box_url = "~/trusty64-gnome.box"
 
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
@@ -25,8 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Development only
   config.vm.provider "virtualbox" do |vb|
     vb.name = "PLaY Data VM"
-    vb.memory = 8192
-    vb.cpus = 4
+    vb.memory = 4196
+    vb.cpus = 2
 
     if ENV['VAGRANT_NO_GUI'] && ENV['VAGRANT_NO_GUI'] == '1'
       vb.gui = false
@@ -36,13 +36,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # an error in turning on 3D accelerating
     # which fails user to arbitarily set vb.gui = true or false
-    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
+    # vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
 
+    # GUI settings, uncomment to modify
     # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-    # vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    # vb.customize ["modifyvm", :id, "--ioapic", "off"]
     # vb.customize ["modifyvm", :id, "--vram", "128"]
-    # vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
-
+    # vb.customize ["modifyvm", :id, "--hwvirtex", "off"]
   end
 
   # Disable automatic box update checking. If you disable this, then
