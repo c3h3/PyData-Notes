@@ -10,8 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "trusty64-gnome"
-  config.vm.box_url = "~/trusty64-gnome.box"
+  config.vm.box = "ask/ubuntu-13.10-desktop-64bit"  # "trusty64-gnome"
+  #config.vm.box_url = "~/trusty64-gnome.box"
 
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
@@ -19,12 +19,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, id: 'python-env', :path => "vagrant_scripts/python_env.sh"
   config.vm.provision :shell, id: 'python-packages', :path => "vagrant_scripts/python_pkgs.sh"
   config.vm.provision :shell, id: 'r-env', :path => "vagrant_scripts/r_env.sh"
-  config.vm.provision :shell, id: 'greeting', :path => "vagrant_scripts/provision.py"
   config.vm.provision :shell, id: 'python-orange', :path => "vagrant_scripts/python_orange.sh"
+  config.vm.provision :shell, id: 'greeting', :path => "vagrant_scripts/provision.py"
 
   # Development only
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "PLaY Data VM"
+    # vb.name = "PLaY Data VM"
     vb.memory = 4196
     vb.cpus = 2
 
