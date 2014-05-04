@@ -14,4 +14,4 @@ apt-get install -y python-numpy python-scipy \
     python-nltk python-opencv \
     mongodb-org python-pymongo python-pymongo-ext
 
-# TODO: jieba Orange gensim
+# TODO: jieba gensim
