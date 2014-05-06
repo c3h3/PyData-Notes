@@ -12,8 +12,8 @@ This shows you how to build the `trusty64-gnome` we use. Take VirtualBox as exam
     vagrant init ubuntu/trusty64
     # some downloading at first time ...
 
-Install minimal GNOME desktop
-"""""""""""""""""""""""""""""
+**Install minimal GNOME desktop**
+
 Then modify the ``Vagrantfile``, uncomment the line to use gui
 
 .. code-block::
@@ -35,8 +35,7 @@ Then start the Vagrant normally, the VM screen should be popped u
 If everything works normally, you will see GNOME grahical login screen.
 
 
-Clean up, Settings
-""""""""""""""""""
+**Clean up, Settings**
 
 .. code-block:: bash
 
