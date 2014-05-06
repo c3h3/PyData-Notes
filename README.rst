@@ -13,7 +13,7 @@ This shows you how to build the `trusty64-gnome` we use. Take VirtualBox as exam
     # some downloading at first time ...
 
 Install minimal GNOME desktop
------------------------------
+"""""""""""""""""""""""""""""
 Then modify the ``Vagrantfile``, uncomment the line to use gui
 
 .. code-block::
@@ -23,6 +23,7 @@ Then modify the ``Vagrantfile``, uncomment the line to use gui
 Then start the Vagrant normally, the VM screen should be popped u
 
 .. code-block::
+
     vagrant up
     vagrant ssh
 
@@ -35,9 +36,9 @@ If everything works normally, you will see GNOME grahical login screen.
 
 
 Clean up, Settings
-------------------
+""""""""""""""""""
 
-.. code-block::
+.. code-block:: bash
 
     # Traditional Chinese Support
     sudo apt-get install language-pack-zh-hant firefox-locale-zh-hant
