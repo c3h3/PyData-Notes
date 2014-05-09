@@ -13,5 +13,3 @@ apt-get install -y python-numpy python-scipy \
     ipython ipython-notebook ipython-doc ipython-notebook-common \
     python-nltk python-opencv \
     mongodb-org python-pymongo python-pymongo-ext
-
-# TODO: jieba gensim
