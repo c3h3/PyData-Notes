@@ -38,3 +38,8 @@ osdc.tar.gz
 *.pickle
 
 
+# Vagrant related #
+###################
+.vagrant/
+
+
