@@ -1,4 +1,6 @@
 apt-get install -y r-recommended
 apt-get install -y gdebi-core libapparmor1
-wget http://download2.rstudio.org/rstudio-server-0.98.501-amd64.deb
-gdebi -n rstudio-server-0.98.501-amd64.deb
+RSTUDIO_VER="0.98.507"
+wget http://download2.rstudio.org/rstudio-server-$RSTUDIO_VER-amd64.deb
+gdebi -n rstudio-server-$RSTUDIO_VER-amd64.deb
+rm rstudio-server-$RSTUDIO_VER-amd64.deb
