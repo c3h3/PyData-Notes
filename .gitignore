@@ -21,7 +21,7 @@
 
 # dataset related #
 ###################
-*.csv
+# *.csv
 
 LectureNotePacketSciCompMeth.pdf
 
