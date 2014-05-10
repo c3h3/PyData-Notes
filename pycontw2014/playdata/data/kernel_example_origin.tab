@@ -1,0 +1,10 @@
+L	x1	x2
+A B	continuous	continuous
+		class
+A	1.0	0.0
+A	0.0	1.0
+A	0.0	-1.0
+B	-1.0	0.0
+B	0.0	2.0
+B	0.0	-2.0
+B	-2.0	0.0

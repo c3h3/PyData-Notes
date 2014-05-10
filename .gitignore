@@ -33,7 +33,7 @@ pycontw2014/playdata/osdc/
 pycontw2014/playdata/try_datasets
 osdc.tar.gz
 
-*.tab
+
 *.ows
 *.pickle
 
