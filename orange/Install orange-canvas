@@ -1,0 +1,13 @@
+##Install ornage-canvas
+
+hg clone https://bitbucket.org/biolab/orange
+
+cd orange
+
+python setup.py build_pyqt_ext
+
+python setup.py build
+
+sudo python setup.py install
+
+sudo orange-canvas
