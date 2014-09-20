@@ -1,6 +1,10 @@
 # Python #
 ##########
 *.pyc
+*.html
+*.so
+*.csv
+*.tab
 
 
 # IPython Notebook #
